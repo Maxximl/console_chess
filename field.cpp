@@ -25,7 +25,7 @@ void field::drowField()
     }
 }
 
-void field::fillField(const char * chess_form )
+void field::fillField(int side, const char * chess_form )
 {
 
 }

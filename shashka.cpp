@@ -15,3 +15,13 @@ void shashka::setSide(int sd)
 {
     side = sd;
 }
+void shashka::setPosition(int x, int y)
+{
+    positionX = x;
+    positionY = y;
+}
+
+int shashka::getSide() const
+{
+    return  side;
+}

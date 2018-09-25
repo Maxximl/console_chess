@@ -23,7 +23,7 @@ public:
    void setSide(int sd);
    void setChoosed();
    bool isChoosed() const;
-
+   int getSide() const;
 
 private:
     char chessForm;

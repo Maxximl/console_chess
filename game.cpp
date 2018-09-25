@@ -21,9 +21,9 @@ game::~game()
 
 void game::startGame()
 {
-    char side;
     mField->drowField();
     beginSetup();
+
 
 
 
@@ -31,32 +31,17 @@ void game::startGame()
 
 void game::playGame()
 {
-    char addressX;
-    int addressY;
 
-    cout << "Введи адрес шашки, которую необходимо выбрать: ";
-    while(cin >> addressX >> addressY)
-    {
-        if ( addressX == 'x')
-        {
-            mField->cancellChoose();
-            continue;
-        }
-        printf("\e[1;1H\e[2J"); // очистить консоль
-        mField->chooseChess(addressX, addressY);
-        mField->drowField();
-        cout << "Введи адрес шашки, которую необходимо выбрать: ";
-    }
 }
 
 void game::createBox()
 {
-    for (int i = 0; i < box->size() / 2; i++) // создаем 12 белых шашек
+    for (size_t i = 0; i < box->size() / 2; i++) // создаем 12 белых шашек
     {
         box->push_back(new shashka('o'));
     }
 
-    for (int i = box->size() / 2; i < box->size(); i++) // создаем 12 черных шашек
+    for (size_t  i = box->size() / 2; i < box->size(); i++) // создаем 12 черных шашек
     {
         box->push_back(new shashka('*'));
     }
@@ -76,14 +61,14 @@ void game::beginSetup()
     {
         if (color == 'o') // если выбрали белые
         {
-            for (int i = 0; i < box->size() / 2; i++)
+            for (size_t i = 0; i < box->size() / 2; i++)
             {
                box->at(i)->setSide(side);
             }
         }
         else if (color == '*') // если выбрали черные
         {
-            for (int i = box->size() / 2; i < box->size(); i++)
+            for (size_t  i = box->size() / 2; i < box->size(); i++)
             {
                box->at(i)->setSide(side);
             }
@@ -93,18 +78,33 @@ void game::beginSetup()
     {
         if (color == 'o') // если выбрали белые
         {
-            for (int i = 0; i < box->size() / 2; i++)
+            for (size_t  i = 0; i < box->size() / 2; i++)
             {
                box->at(i)->setSide(side);
             }
         }
         else if (color == '*') // если выбрали черные
         {
-            for (int i = box->size() / 2; i < box->size(); i++)
+            for (size_t  i = box->size() / 2; i < box->size(); i++)
             {
                box->at(i)->setSide(side);
             }
         }
     }
+    else
+    {
+        cout << "Введи корректную команду: \n";
+    }
 
+}
+
+void game::setChessPosition()
+{
+    for (size_t  i = 0; i < box->size(); i++)
+    {
+        if (box->at(i)->getSide() == 1)
+        {
+//            box->at(i)->setPosition();
+        }
+    }
 }

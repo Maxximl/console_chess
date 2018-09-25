@@ -8,7 +8,7 @@ class field
 public:
     field();
     void drowField();
-    void fillField(const char *chess_form);
+    void fillField(int side, const char *chess_form);
     void clearField();
     void chooseChess(char column, int row);
     void cancellChoose();
@@ -18,8 +18,8 @@ private:
    static const int row_number = 10; // количество строк
    static const int elements_number = 6; // количество элементов для рисования клеточки
    const char *topBorder = "    _______________________________";
-   char  whole_field[row_number][column_number][6] = { {"  ",   "  a  ",    " b  ",    " c  ",    " d  ",    " e  ",    " f  ",    " g  ",    " h  "},
-                                                       {"   ", "____", "____", "____", "____", "____", "____", "____", "___",},
+   char  whole_field[row_number][column_number][6] = { {"  ", "  a  ", " b  ", " c  ", " d  ", " e  ", " f  ", " g  ", " h  " },
+                                                       {"   ", "____", "____", "____", "____", "____", "____", "____", "___"  },
                                                        {"1 |", "___|", "///|", "___|", "///|", "___|", "///|", "___|", "///|" },
                                                        {"2 |", "///|", "___|", "///|", "___|", "///|", "___|", "///|", "___|" },
                                                        {"3 |", "___|", "///|", "___|", "///|", "___|", "///|", "___|", "///|" },
