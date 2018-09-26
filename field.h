@@ -8,7 +8,7 @@ class field
 public:
     field();
     void drowField();
-    void fillField(int side, const char *chess_form);
+    void fillField(int x, int y, const char *chess);
     void clearField();
     void chooseChess(char column, int row);
     void cancellChoose();

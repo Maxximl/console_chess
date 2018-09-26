@@ -15,7 +15,7 @@ public:
    shashka(char form = 'N', int posX = -1, int posY = -1);
    ~shashka();
    const char * getForm() const;
-   void setPosition(int x, int y);
+   void setPosition(const int y, const int x);
    void kill(bool isKill);
    void setQueen(bool isQueen);
    bool isQueen() const;
@@ -24,7 +24,8 @@ public:
    void setChoosed();
    bool isChoosed() const;
    int getSide() const;
-
+   int getX() const;
+   int getY() const;
 private:
     char chessForm;
     int positionX;

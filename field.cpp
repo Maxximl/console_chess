@@ -25,9 +25,9 @@ void field::drowField()
     }
 }
 
-void field::fillField(int side, const char * chess_form )
+void field::fillField(int x, int y, const char* chess )
 {
-
+  whole_field[y][x][1] = *chess;
 }
 
 void field::clearField()
